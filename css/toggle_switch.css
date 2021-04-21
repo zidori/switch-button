@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+/* default switch btn */
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch .slider{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f1f1f1;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.switch .slider:before{
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  top: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  transition-duration: .2s;
+}
+
+.switch > input{
+  display: none;
+}
+
+.switch > input:checked + .slider{
+  background: #2196f3;
+}
+
+.switch > input:checked + .slider:before{
+  left: 30px;
+}
+
+/* kind of type */
+/* Round type */
+.switch.round .slider{
+  border-radius: 17px;
+}
+
+.switch.round .slider::before,.switch.round .slider::after{
+  border-radius: 100%;
+}
+
+/* size type */
+/* medium size */
+.switch.medium{
+  width: 56px;
+  height: 30px;
+}
+
+.switch.medium .slider::before{
+  width: 22px;
+  height: 22px;
+}
+
+/* small size */
+.switch.small{
+  width: 52px;
+  height: 26px;
+}
+
+.switch.small .slider::before{
+  width:18px;
+  height: 18px;
+}
+
+/* color type */
+/* green */
+.switch.green input:checked + .slider{
+  background: green;
+}
+
+/* red */
+.switch.red input:checked + .slider{
+  background: red;
+}
+
+/* yellow */
+.switch.yellow input:checked + .slider{
+  background: yellow;
+}
+
+/* text type */
+.switch.text .slider:after{
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  top: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  transition-duration: 0.2s;
+  opacity: 0;
+}
+
+.switch.text .slider:after,
+.switch.text .slider:before{
+  line-height: 26px;
+  font-size: 12px;
+}
+
+.switch.text > input + .slider:before{
+  left: 30px;
+  opacity: 0;
+  content: 'ON';
+}
+
+.switch.text > input + .slider:after{
+  left: 4px;
+  opacity: 1;
+  content: 'OFF';
+}
+
+.switch.text > input:checked + .slider:before{
+  left: 30px;
+  opacity: 1;
+  content: 'ON';
+}
+
+.switch.text > input:checked + .slider:after{
+  left: 4px;
+  opacity: 0;
+  content: 'OFF';
+}
+
+/* .switch.text .slider::before{
+  content: 'off';
+}
+
+.switch.text input:checked + .slider::before{
+  content: 'on';
+} */
